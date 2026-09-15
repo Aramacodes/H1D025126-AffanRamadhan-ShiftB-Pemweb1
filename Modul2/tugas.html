@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validasi Input</title>
+</head>
+<body>
+
+  <form action="#" method="post">
+    <label for="input1">Input 1 (Readonly):</label><br>
+    
+    <input type="text" id="input1" name="input1" value="Nilai Tetap" readonly>
+
+    <br><br>
+
+    <label for="input2">Input 2 (Maks 5 Karakter):</label><br>
+    <input type="text" id="input2" name="input2" maxlength="5">
+
+    <br><br>
+
+    <label for="input3">Input 3 (Disabled):</label><br>
+    <input type="text" id="input3" name="input3" value="Tidak Aktif" disabled>
+
+    <br><br>
+
+    <label for="input4">Input 4 (Wajib Diisi):</label><br>
+    <input type="text" id="input4" name="input4" required>
+
+    <br><br>
+
+    <label for="input5">Input 5 (NIM - 9 Karakter Huruf Kapital & Angka):</label><br>
+    <input 
+      type="text" 
+      id="input5" 
+      name="nim" 
+      maxlength="9" 
+      pattern="[A-Z0-9]{9}" 
+      title="Harus terdiri dari tepat 9 karakter berupa huruf KAPITAL atau ANGKA, tanpa spasi/simbol" 
+      required><br><br>
+
+    <input type="submit" value="Kirim Data">
+  </form>
+
+</body>
+</html>
