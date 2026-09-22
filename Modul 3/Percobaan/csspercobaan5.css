@@ -1,0 +1,24 @@
+body {
+    background-color: blue;
+} table {
+    background: gray;
+    padding: 5px;
+    width: 68%;
+    border-width: 0px;
+} .kolom1 {
+    font-weight: bold;
+    width: 15%;
+} .kolom2{
+    width: 2%;
+} .kolom3{
+    width: 83%;
+} #txtNama, #txtKota {
+    width: 186px;
+} #txtTgl, #txtBulan {
+    width: 54px;
+} #txtTahun {
+    width: 87px;
+} #txtAlamat {
+    width: 340px;
+    height: 42px;
+}

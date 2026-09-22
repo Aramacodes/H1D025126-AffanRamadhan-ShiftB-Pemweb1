@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="csspercobaan5.css">
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: hsl(0, 0%, 90%);
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            padding: 10px;
+            border-style: solid;
+            width: 400px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 4px;
+        } input, textarea {
+            padding: 2px 5px;
+            border: solid black;
+            border-width: 1px;
+            border-radius: 3px;
+        }
+        .inputTgl{
+            width: 15%;
+        } #btnKirim, #btnCancel {
+            border: none;
+            padding: 5px;
+            background-color: crimson;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            box-shadow: 5px 5px 10px rgba(25, 25, 25);
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Free Registration</h2>
+        <form action="proses.php" method="post" name="form">
+            <table>
+                <tr>
+                    <td class="kolom1">Nama</td>
+                    <td class="kolom2">:</td>
+                    <td class="kolom3"><input placeholder="Masukkan Nama" name="txtNama" type="text" id="txtNama"></td>
+                </tr>
+                <tr>
+                    <td class="kolom1">Tgl Lahir</td>
+                    <td>:</td>
+                    <td>
+                        <input class="inputTgl" name="txtTgl" type="text" id="txtTgl" maxlength="2" placeholder="tanggal">
+                        /
+                        <input class="inputTgl" name="txtBulan" type="text" id="txtBulan" maxlength="2" placeholder="bulan">
+                        / 
+                        <input class="inputTgl" name="txtTahun" type="text" id="txtTahun" maxlength="4" placeholder="tahun">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="kolom1">Alamat</td>
+                    <td>&nbsp;</td>
+                    <td><textarea name="txtAlamat" id="txtAlamat" placeholder="Masukkan Alamat"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="kolom1">Kota</td>
+                    <td>:</td>
+                    <td><input placeholder="Masukkan Kota" name="txtKota" type="text" id="txtKota"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input name="btnKirim" type="submit" id="btnKirim" value="Kirim">
+                        <input name="btnCancel" type="reset" id="btnCancel" value="Cancel">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
