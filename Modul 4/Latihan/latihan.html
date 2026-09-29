@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikum Pemrograman Web</title>
+</head>
+
+<body>
+    <form method="post" name="frmbuku" onSubmit="return cek()">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><input type="text" id="nama" name="nama" style="width: 200px;" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="text" id="email" name="email" style="width: 200px;"></td>
+            </tr>
+            <tr>
+                <td>Komentar</td>
+                <td>:</td>
+                <td><textarea name="komentar" id="komentar" rows="5" style="width: 250px;"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" id="btnSubmit">
+    </form>
+
+    <script>
+        const inpNama = document.getElementById('nama');
+        const inpEmail = document.getElementById('email');
+        const inpKomentar = document.getElementById('komentar');
+        const btnSubmit = document.getElementById('btnSubmit');
+
+        function cek() {
+            if (inpNama.value == "") {
+                alert("Nama harus diisi!");
+                inpNama.focus();
+                return false;
+            } else if (inpEmail.value == "") {
+                alert("Email harus diisi!");
+                inpEmail.focus();
+                return false;
+            } else if (inpKomentar.value == "") {
+                alert("Komentar harus diisi!");
+                inpKomentar.focus();
+                return false;
+            }
+            alert("Pengisian form sukses!");
+            return true;
+        }
+    </script>
+</body>
+
+</html>

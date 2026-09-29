@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikum Pemrograman Web</title>
+</head>
+<body>
+    <input type="text" id="nilai1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="nilai2">
+    <input type="submit" id="btnKirim" onclick="tampilkanHasil()">
+    <p id="textHasil" style="font-weight: bold;"></p>
+
+    <script>
+        function tampilkanHasil() {
+            const nilai1 = parseFloat(document.getElementById('nilai1').value);
+            const operator = document.getElementById('operator').value;
+            const nilai2 = parseFloat(document.getElementById('nilai2').value);
+            const textHasil = document.getElementById('textHasil');
+
+            if (isNaN(nilai1) || isNaN(nilai2)) {
+                alert("Input harus berupa angka");
+                return;
+            }
+
+            let hasil;
+            switch (operator) {
+                case "+":
+                    hasil = nilai1 + nilai2;
+                    break;
+                case "-":
+                    hasil = nilai1 - nilai2;
+                    break;
+                case "*":
+                    hasil = nilai1 * nilai2;
+                    break;
+                case "/":
+                    if (nilai2 === 0) {
+                        alert("Pembagian dengan nol tidak diperbolehkan");
+                        return;
+                    }
+                    hasil = nilai1 / nilai2;
+                    break;
+            }
+
+            textHasil.textContent = "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>

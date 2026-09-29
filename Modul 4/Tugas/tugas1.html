@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikum Pemrograman Web</title>
+</head>
+<body>
+    <label for="inpNilai">Nilai :</label>
+    <input type="text" id="inpNilai" placeholder="Masukkan Nilai">
+    <input type="submit" id="btnKirim" onclick="tampilkanKeputusan()">
+    <p id="textHasil"></p>
+
+    <script>
+        const btnKirim = document.getElementById('btnKirim');
+        function tampilkanKeputusan(){
+            const nilai = parseFloat(document.getElementById('inpNilai').value);
+            const textHasil = document.getElementById('textHasil');
+
+            if(isNaN(nilai)){
+                alert("Input harus berupa angka");
+                return;
+            } 
+
+            if(nilai <= 20){
+                textHasil.textContent = "Nilai Anda adalah E";
+            } else if (nilai > 20 && nilai <= 40){
+                textHasil.textContent = "Nilai Anda adalah D";
+            } else if (nilai > 40 && nilai <= 60){
+                textHasil.textContent = "Nilai Anda adalah C";
+            } else if (nilai > 60 && nilai <= 80){
+                textHasil.textContent = "Nilai Anda adalah B";
+            } else if (nilai > 80 && nilai <= 100){
+                textHasil.textContent = "Nilai Anda adalah A";
+            }
+        }
+    </script>
+</body>
+</html>
