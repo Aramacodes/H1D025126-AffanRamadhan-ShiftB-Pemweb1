@@ -1,0 +1,105 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.container {
+    width: 90%;
+    max-width: 850px;
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.tambah {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding: 3px 6px;
+    border: 1px solid #aaa;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+article {
+    margin-top: 10px;
+}
+
+article h3 {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.aksi {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.aksi form {
+    display: inline;
+    margin: 0;
+}
+
+.link-button {
+    border: 0;
+    padding: 0;
+    background: none;
+    color: #00e;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.konten p {
+    margin: 8px 0;
+    line-height: 1.25;
+}
+
+.form-container {
+    width: 320px;
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-container form {
+    margin-top: 12px;
+}
+
+.form-container label {
+    display: block;
+    margin: 8px 0 3px;
+}
+
+.form-container input,
+.form-container textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.form-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-container button {
+    display: block;
+    margin-top: 6px;
+    font-family: inherit;
+}
