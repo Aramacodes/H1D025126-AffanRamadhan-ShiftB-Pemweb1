@@ -1,0 +1,278 @@
+/* ===================================================
+   Mentora – style.css
+   Palette: Teal primary (#0d9488), Amber accent (#f59e0b)
+   Typeface: Nunito (ramah, readable untuk pelajar)
+   ENERGY 2 / RHYTHM 2 / MOTION 1
+=================================================== */
+
+:root {
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --teal-light: #ccfbf1;
+    --amber: #f59e0b;
+    --amber-dark: #d97706;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --radius: 8px;
+    --radius-lg: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.3; }
+.fw-800 { font-weight: 800; }
+.fw-700 { font-weight: 700; }
+
+/* Brand */
+.brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 16px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.text-teal { color: var(--teal) !important; }
+.bg-teal { background: var(--teal) !important; }
+.bg-teal-light { background: var(--teal-light) !important; }
+.bg-dark-teal { background: #134e4a !important; }
+
+/* Buttons & interactive elements cursor (R-39) */
+a[href], button, summary, select,
+input[type="checkbox"], input[type="radio"],
+label[for="imgPreviewInput"],
+[role="button"], [role="tab"],
+.upload-area, .btn {
+    cursor: pointer;
+}
+input:disabled, button:disabled, select:disabled {
+    cursor: not-allowed;
+}
+
+.btn-teal {
+    background: var(--teal);
+    color: #fff;
+    border: 2px solid var(--teal);
+    border-radius: var(--radius);
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+    transition: background .18s, border-color .18s;
+    min-height: 44px;
+}
+.btn-teal:hover, .btn-teal:focus {
+    background: var(--teal-dark);
+    border-color: var(--teal-dark);
+    color: #fff;
+}
+.btn-teal:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+}
+.btn-outline-teal {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+    border-radius: var(--radius);
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+    transition: background .18s, color .18s;
+    min-height: 44px;
+}
+.btn-outline-teal:hover, .btn-outline-teal:focus {
+    background: var(--teal);
+    color: #fff;
+}
+.btn-outline-teal:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+}
+.btn-amber {
+    background: var(--amber);
+    color: #1e293b;
+    border: 2px solid var(--amber);
+    border-radius: var(--radius);
+    font-weight: 700;
+    padding: 0.45rem 1.1rem;
+    min-height: 44px;
+    transition: background .18s;
+}
+.btn-amber:hover { background: var(--amber-dark); border-color: var(--amber-dark); }
+.btn-amber:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+/* Focus visible global (R-32) */
+:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+}
+
+/* Navbar */
+.navbar-brand { font-size: 1.3rem; text-decoration: none; }
+.navbar { box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.nav-link { color: var(--text); font-weight: 600; }
+.nav-link:hover, .nav-link:focus { color: var(--teal); }
+
+/* Main content spacing */
+.main-content { min-height: 70vh; padding-top: 1.5rem; padding-bottom: 2rem; }
+
+/* Cards */
+.card-kelas {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.card-kelas:hover {
+    box-shadow: 0 4px 18px rgba(13,148,136,.13);
+    transform: translateY(-2px);
+}
+/* Shadow purposeful: elevasi untuk membedakan kelas dari background (R-12) */
+.card-kelas .card-body { flex: 1; }
+
+.thumbnail-wrapper {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: var(--teal-light);
+    overflow: hidden;
+}
+.thumbnail-wrapper img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* Badge harga */
+.badge-gratis {
+    background: var(--amber);
+    color: #1e293b;
+    font-size: .72rem;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 2px 7px;
+}
+/* Badge purposeful: menandai kelas gratis agar siswa mudah identifikasi (R-09) */
+
+/* Status badge */
+.badge-status {
+    font-size: .72rem;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+.badge-aktif { background: #d1fae5; color: #065f46; }
+.badge-nonaktif { background: #fee2e2; color: #991b1b; }
+.badge-menunggu_bayar { background: #fef3c7; color: #92400e; }
+.badge-menunggu_verifikasi { background: #dbeafe; color: #1e40af; }
+.badge-selesai { background: #d1fae5; color: #065f46; }
+.badge-ditolak { background: #fee2e2; color: #991b1b; }
+.badge-dibatalkan { background: #f1f5f9; color: #475569; }
+
+/* Hero – beranda */
+.hero-section {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    /* Gradient purposeful: membentuk zona hero yang kuat, bukan dekorasi (R-01) */
+    color: #fff;
+    padding: 4rem 0 3rem;
+}
+.hero-section h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; }
+.hero-section p { font-size: 1.1rem; opacity: .9; }
+
+/* Section headings */
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--teal);
+    display: inline-block;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    font-family: 'Nunito', sans-serif;
+    min-height: 44px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(13,148,136,.15);
+}
+label { font-weight: 600; }
+
+/* Tables */
+.table th { background: var(--teal-light); font-weight: 700; }
+
+/* Alert custom */
+.alert { border-radius: var(--radius); }
+
+/* Sidebar dashboard */
+.sidebar-nav .nav-link {
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    margin-bottom: 2px;
+    color: var(--text);
+}
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+    background: var(--teal-light);
+    color: var(--teal);
+}
+.sidebar-nav .nav-link i { width: 20px; }
+
+/* Rating stars */
+.bi-star-fill, .bi-star { font-size: 0.9rem; }
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+}
+.empty-state i { font-size: 3rem; color: var(--border); margin-bottom: 1rem; }
+
+/* Upload area */
+.upload-area {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .18s;
+}
+.upload-area:hover { border-color: var(--teal); }
+
+/* Responsive (R-03) */
+@media (max-width: 767.98px) {
+    .hero-section { padding: 2.5rem 0 2rem; }
+    .hero-section h1 { font-size: 1.8rem; }
+    .main-content { padding-top: 1rem; }
+}
+
+/* prefers-reduced-motion (R-39) */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
